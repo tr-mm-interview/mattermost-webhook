@@ -8,11 +8,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Hello world to Mattermost
+      - name: Send hello world to Mattermost
         env:
           MATTERMOST_WEBHOOK_URL: ${{ secrets.MATTERMOST_WEBHOOK_URL }}
         run: |
           curl -X POST \
             -H 'Content-Type: application/json' \
-            -d '{"text":"Hello world"}' \
+            -d '{
+              "username": "Bender",
+              "icon_url": "https://static.wikia.nocookie.net/enfuturama/images/0/0a/Bender_Rodriguez.png",
+              "text": "Hello world"
+            }' \
             "$MATTERMOST_WEBHOOK_URL"
