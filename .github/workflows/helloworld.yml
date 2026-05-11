@@ -16,7 +16,7 @@ jobs:
             -H 'Content-Type: application/json' \
             -d '{
               "username": "Bender",
-              "icon_url": "https://i.imgflip.com/1jp5u9.jpg"
+              "icon_url": "https://i.imgflip.com/1jp5u9.jpg",
               "text": "Hello world"
             }' \
             "$MATTERMOST_WEBHOOK_URL"
